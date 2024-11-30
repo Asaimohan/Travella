@@ -1,14 +1,43 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text } from "react-native";
+import React, { useState } from "react";
+import Colors from "./../../constants/Colors";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import StartNewTripCard from "../../components/MyTrips/StartNewTripCard";
 
 export default function MyTrip() {
-  return (
-    <View>
-      <Text style={{
-        padding:5,textAlign:'center',fontSize:30,marginTop:40,fontFamily:'italic'
-      }}>My Trips
+  const [userTrips, setUserTrips] = useState([]);
 
-      </Text>
+  return (
+    <View
+      style={{
+        padding: 25,
+        paddingTop: 55,
+        backgroundColor: "white",
+        height: "100%",
+      }}
+    >
+      <View
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignContent: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <Text
+          style={{
+            textAlign: "center",
+            fontSize: 35,
+
+            fontFamily: "itallic",
+          }}
+        >
+          My Trips
+        </Text>
+        <Ionicons name="add-circle" size={40} color="black" />
+      </View>
+
+      {userTrips?.length == 0 ? <StartNewTripCard /> : null}
     </View>
-  )
+  );
 }
