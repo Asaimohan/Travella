@@ -38,19 +38,20 @@ export default function searchPlace() {
         placeholder="Search Place"
         fetchDetails={true}
         onPress={(data, details = null) => {
-          // 'details' is provided when fetchDetails = true
-          console.log(data.description);
-          console.log(details?.geometry.location);
-          console.log(details?.photos[0]?.photos_reference);
-          console.log(details?.url);
-          setTripData({
-            locationInfo: {
-              name: data.description,
-              coordinates: details?.geometry.location,
-              photoRef: details?.photos[0]?.photos_reference,
-              url: details?.url,
-            },
-          });
+           // 'details' is provided when fetchDetails = true
+           console.log(data.description);
+           console.log(details?.geometry.location);
+           console.log(details?.photos[0]?.photos_reference);
+           console.log(details?.url);
+           setTripData({
+             locationInfo: {
+               name: data.description,
+               coordinates: details?.geometry.location,
+               photoRef: details?.photos[0]?.photos_reference,
+               url: details?.url,
+             },
+           });
+         
         }}
         query={{
           key: process.env.EXPO_PUBLIC_GOOGLE_MAP_KEY,
