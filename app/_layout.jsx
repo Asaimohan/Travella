@@ -6,6 +6,7 @@ import { useState } from "react";
 export default function RootLayout() {
   useFonts({
     italic: require("./../assets/fonts/itallic.ttf"),
+    bold: require("./../assets/fonts/Outfit-Bold.ttf"),
   });
 
   const [tripData, setTripData] = useState([]);
