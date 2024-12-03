@@ -32,7 +32,7 @@ export default function selectBudget() {
           ToastAndroid.show('Please Select your Budget',ToastAndroid.LONG)
           return;
         }
-        router.push('');
+        router.push('/create-trip/review-trip');
        }
   return (
     <View style={{
@@ -78,7 +78,7 @@ export default function selectBudget() {
         }}>
         <Text style={{
           color:Colors.white,
-          textAlign:'center',
+          textAlign:'center',fontFamily:'bold'
          
 
         }}>

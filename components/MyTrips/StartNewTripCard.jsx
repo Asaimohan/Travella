@@ -49,7 +49,7 @@ export default function StartNewTripCard() {
           style={{
             color: "white",
             fontFamily: "SpaceMono-Regular",
-            fontSize: 15,
+            fontSize: 15,fontFamily:'bold'
           }}
         >
           Start A New Trip

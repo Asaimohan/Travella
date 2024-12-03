@@ -84,7 +84,7 @@ export default function SelectDates() {
          
         <Text style={{
           color:Colors.white,
-          textAlign:'center',
+          textAlign:'center',fontFamily:'bold'
          
 
         }}>

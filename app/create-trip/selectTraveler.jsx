@@ -84,7 +84,7 @@ export default function selectraveler() {
           <Link href={'/create-trip/selectdates'}>
         <Text style={{
           color:Colors.white,
-          textAlign:'center',
+          textAlign:'center',fontFamily:'bold'
          
 
         }}>
