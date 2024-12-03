@@ -17,6 +17,7 @@
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
     "@firebase/app": "^0.10.16",
+    "@google/generative-ai": "^0.21.0",
     "@react-native-async-storage/async-storage": "^1.23.1",
     "@react-navigation/bottom-tabs": "^7.0.0",
     "@react-navigation/native": "^7.0.0",
@@ -39,6 +40,7 @@
     "react-dom": "18.3.1",
     "react-native": "0.76.3",
     "react-native-calendar-picker": "^8.0.5",
+    "react-native-fast-image": "^8.6.3",
     "react-native-gesture-handler": "~2.20.2",
     "react-native-get-random-values": "^1.11.0",
     "react-native-google-places-autocomplete": "^2.5.7",
