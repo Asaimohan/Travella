@@ -9,21 +9,22 @@ export default function UserTripCard({trip}) {
   }
   return (
     <View style={{
-            marginTop:15,
+            marginTop:20,
             display:'flex',
             flexDirection:'row',
             gap:10,
             alignItems:'center'
           }}>
-            <Image source={require('./../../assets/images/destination.jpg')}
+            <Image source={require('./../../assets/images/location3D.jpg')}
             style={{
-              width:100,
-              height:100
+              width:130,
+              height:100,
+              borderRadius:15
             }}/>
             <View>
-                <Text>{trip.tripPlan?.trip_details?.destination}</Text>
-                <Text>{moment(formatData(trip.tripData).startDate).format('DD MMM YYYY')}</Text>
-                <Text >{formatData(trip.tripData).traveler.title}</Text>
+                <Text style={{ fontFamily:'bold',fontSize:19}}>{trip.tripPlan?.trip_details?.destination}</Text>
+                <Text style={{ fontSize:14, color:Colors.gray}}>{moment(formatData(trip.tripData).startDate).format('DD MMM YYYY')}</Text>
+                <Text style={{ fontSize:14, color:Colors.gray}}>Traveling: {formatData(trip.tripData).traveler.title}</Text>
             </View>
     </View>
   )
