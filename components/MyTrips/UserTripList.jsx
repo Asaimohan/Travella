@@ -14,7 +14,7 @@ export default function UserTripList({userTrips}) {
       <View style={{
         marginTop:20
       }}>
-        <Image source={require('./../../assets/images/goa.jpg')}
+        <Image source={require('./../../assets/images/travel.jpg')}
         style={{
           width:'100%',
           height:230,

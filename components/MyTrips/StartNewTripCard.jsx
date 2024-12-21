@@ -1,7 +1,6 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 import { useRouter } from "expo-router";
 
 export default function StartNewTripCard() {
@@ -9,7 +8,7 @@ export default function StartNewTripCard() {
   return (
     <View
       style={{
-        padding: 20,
+        padding: 20,   
         marginTop: 50,
         display: "flex",
         alignItems: "center",

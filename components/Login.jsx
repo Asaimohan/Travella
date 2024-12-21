@@ -30,7 +30,7 @@ const Login = () => {
 
             <Text style={styles.paragaph}>
               Effortlessly plan your next trip with personalized itineraries for
-              local areas of Bilaspur with AI-driven travel insights.
+               AI-driven travel insights.
             </Text>
             <TouchableOpacity
               onPress={() => router.push("auth/sign-in")}
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     padding: 15,
     backgroundColor: Colors.primary,
     borderRadius: 99,
-    marginTop: "10%",
+    marginTop: 60,
   },
   buttonText: {
     textAlign: "center",
