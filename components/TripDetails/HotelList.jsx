@@ -1,11 +1,12 @@
 import { View, Text, FlatList, Image } from 'react-native'
 import React from 'react'
+import { Header } from 'react-native/Libraries/NewAppScreen'
 
 export default function HotelList({hotelList}) {
   return (
     <View>
       <Text style={{ fontFamily:'bold',
-        fontSize:20
+        fontSize:25
       }}>🛏️ Hotel Recomendation</Text>
       <FlatList
       data={hotelList}
