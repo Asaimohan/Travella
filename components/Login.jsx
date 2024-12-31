@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
     textAlign: "center",
     color: Colors.primary,
-    marginTop: 80,
+    marginTop: 60,
   },
   button: {
     padding: 15,

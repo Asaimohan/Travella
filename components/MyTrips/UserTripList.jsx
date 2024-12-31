@@ -4,8 +4,23 @@ import moment from 'moment'
 import {Colors} from './../../constants/Colors'
 import UserTripCard from './UserTripCard'
 import {useRouter} from 'expo-router'
+import { useEffect, useState } from 'react';
+import { GetPhotoRef } from '../../services/GooglePlaceApi';
+
+
 
 export default function UserTripList({userTrips}) {
+  const [photoRef, setPhotoRef] = useState(null);
+   useEffect(() => {
+    GetGooglePhotoRef();
+  }, []);
+
+  const GetGooglePhotoRef = async () => {
+    const result = await GetPhotoRef(userTrips[0]?.tripPlan?.trip_details?.destination);
+    if (result.results?.length > 0 && result.results[0].photos?.length > 0) {
+      setPhotoRef(result.results[0].photos[0].photo_reference);
+    }
+  };
      const LatestTrip=JSON.parse(userTrips[0].tripData)
      const router=useRouter();
 
@@ -14,7 +29,11 @@ export default function UserTripList({userTrips}) {
       <View style={{
         marginTop:20
       }}>
-        <Image source={require('./../../assets/images/travel.jpg')}
+        <Image source={{
+          uri: photoRef
+            ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photoRef}&key=${process.env.EXPO_PUBLIC_GOOGLE_MAP_KEY}`
+            : 'https://via.placeholder.com/180x120', // Placeholder URL
+        }}
         style={{
           width:'100%',
           height:230,

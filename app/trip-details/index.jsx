@@ -6,12 +6,23 @@ import moment from 'moment';
 import Flightinfo from '../../components/TripDetails/FlightInfo';
 import HotelList from '../../components/TripDetails/HotelList';
 import PlannedTrip from '../../components/TripDetails/PlannedTrip';
+import { GetPhotoRef } from '../../services/GooglePlaceApi';
 
 export default function TripDetails() {
   const navigation = useNavigation();
   const { trip } = useLocalSearchParams();
   const [tripDetails, setTripDetails] = useState(null);
+const [photoRef, setPhotoRef] = useState(null);
+   useEffect(() => {
+    GetGooglePhotoRef();
+  }, []);
 
+  const GetGooglePhotoRef = async () => {
+    const result = await GetPhotoRef(tripDetails?.tripPlan?.trip_details?.destination);
+    if (result.results?.length > 0 && result.results[0].photos?.length > 0) {
+      setPhotoRef(result.results[0].photos[0].photo_reference);
+    }
+  };
   useEffect(() => {
     navigation.setOptions({
       headerShown: true,
@@ -46,7 +57,11 @@ export default function TripDetails() {
   const renderContent = () => (
     <>
       <Image
-        source={require('./../../assets/images/travel.jpg')}
+        source={{
+          uri: photoRef
+            ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photoRef}&key=${process.env.EXPO_PUBLIC_GOOGLE_MAP_KEY}`
+            : 'https://via.placeholder.com/180x120', // Placeholder URL
+        }}
         style={{
           height: 330,
           width: '100%',

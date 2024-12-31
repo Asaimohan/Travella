@@ -1,4 +1,4 @@
-import { View, Text, FlatList } from 'react-native'
+import { View, Text, FlatList, Image } from 'react-native'
 import React from 'react'
 
 export default function PlannedTrip({daydetails}) {
@@ -16,6 +16,12 @@ export default function PlannedTrip({daydetails}) {
       data={daydetails}
       renderItem={({item,index})=>(
         <View >
+          {/* <Image source={require('./../../assets/images/goa.jpg')}
+          style={{
+            height:120,
+            width:'100%',borderRadius:20
+
+          }}/> */}
           <View style={{
            gap:4
           }}>

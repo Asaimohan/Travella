@@ -2,7 +2,6 @@ import { View, Text, FlatList, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Colors } from '../../constants/Colors'
 
-import { Header } from 'react-native/Libraries/NewAppScreen'
 
 export default function Flightinfo({flightData}) {
   return (
@@ -30,8 +29,8 @@ export default function Flightinfo({flightData}) {
           </Text>
           <TouchableOpacity>
           <Text style={{
-            fontFamily:'bold',
-            marginLeft:30, color:Colors.lightblue
+            
+            marginLeft:30, color:Colors.blue
           }}>
             🔗  {item.booking_url}
           </Text>

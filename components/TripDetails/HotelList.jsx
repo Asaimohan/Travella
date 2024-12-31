@@ -1,49 +1,31 @@
 import { View, Text, FlatList, Image } from 'react-native'
-import React from 'react'
-import { Header } from 'react-native/Libraries/NewAppScreen'
+import React, { useEffect } from 'react'
+import { GetPhotoRef } from '../../services/GooglePlaceApi'
+import Hotelcard, {HotelCard} from './../../components/TripDetails/HotelCard'
 
-export default function HotelList({hotelList}) {
+export default function HotelList({ hotelList }) {
+
+
+
+  
+
   return (
     <View>
-      <Text style={{ fontFamily:'bold',
-        fontSize:25
+      <Text style={{
+        fontFamily: 'bold',
+        fontSize: 25
       }}>🛏️ Hotel Recomendation</Text>
       <FlatList
-      data={hotelList}
-      style={{
-        marginTop:8
-      }}
-      horizontal={true}
-      showsHorizontalScrollIndicator={false}
-      renderItem={({item,index})=>(
-        <View style={{
-          marginRight:15,
-          width:180
-        }}>
-          <Image source={require('./../../assets/images/goa.jpg')}
-          style={{
-            width:180,
-            height:120,borderRadius:15
-          }}/>
-          <View>
-            <Text style={{
-              fontFamily:'bold',
-              fontSize:15,textAlign:'center'
-            }}>
-            {item.HotelName}</Text>
-            <View style={{
-              gap:5
-            }}>
-              <Text>
-              ⭐ {item.rating}
-              </Text>
-              <Text>
-              💰 {item.Price}
-              </Text>
-            </View>
-          </View>
-        </View>
-      )}/>
+        data={hotelList}
+        style={{
+          marginTop: 8
+        }}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        renderItem={({ item, index }) => (
+
+          <Hotelcard item={item}/>
+        )} />
     </View>
   )
 }
