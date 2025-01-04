@@ -21,6 +21,7 @@ export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullname, setFullName] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
 
   useEffect(() => {
     navigation.setOptions({
@@ -40,7 +41,7 @@ export default function Signup() {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
-        router.replace('/mytrip')
+        router.replace("/mytrip");
         ToastAndroid.show("Account Created Successfully!", ToastAndroid.BOTTOM);
         // Navigate to sign-in page
         router.replace("auth/sign-in");
@@ -88,13 +89,25 @@ export default function Signup() {
       {/* Password Input */}
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Password</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Enter Password"
-          value={password}
-          secureTextEntry={true}
-          onChangeText={setPassword}
-        />
+        <View style={styles.passwordContainer}>
+          <TextInput
+            style={[styles.input, styles.passwordInput]}
+            placeholder="Enter Password"
+            value={password}
+            secureTextEntry={!showPassword}
+            onChangeText={setPassword}
+          />
+          <TouchableOpacity
+            onPress={() => setShowPassword(!showPassword)}
+            style={styles.eyeButton}
+          >
+            <Ionicons
+              name={showPassword ? "eye-off" : "eye"}
+              size={28}
+              color="black"
+            />
+          </TouchableOpacity>
+        </View>
       </View>
 
       {/* Create Account Button */}
@@ -135,6 +148,17 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderColor: Colors.gray,
     marginTop: 10,
+  },
+  passwordContainer: {
+    position: "relative",
+  },
+  passwordInput: {
+    paddingRight: 50, // Add padding to accommodate the eye button
+  },
+  eyeButton: {
+    position: "absolute",
+    right: 15,
+    top: 25, // Vertically center the icon in the input field
   },
   createAccountButton: {
     padding: 15,
