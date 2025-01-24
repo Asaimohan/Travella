@@ -22,7 +22,7 @@ const Login = () => {
                 fontSize: 15,
                 color: Colors.gray,
                 textAlign: "center",
-                marginTop: -10,
+                marginTop:5
               }}
             >
               Plan,Explore,Experience
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
     textAlign: "center",
     color: Colors.primary,
-    marginTop: 60,
+    marginTop: 40,
   },
   button: {
     padding: 15,
