@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, ToastAndroid } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { useNavigation, useRouter } from 'expo-router'
-import{Colors, colors} from './../../constants/Colors'
+import{Colors} from './../../constants/Colors'
 import CalendarPicker from "react-native-calendar-picker";
 import moment from 'moment';
 import { useContext } from "react";

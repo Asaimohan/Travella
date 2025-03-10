@@ -5,10 +5,11 @@ import { useRouter } from "expo-router";
 
 export default function StartNewTripCard() {
   const router = useRouter();
+
   return (
     <View
       style={{
-        padding: 20,   
+        padding: 20,
         marginTop: 50,
         display: "flex",
         alignItems: "center",
@@ -19,7 +20,7 @@ export default function StartNewTripCard() {
       <Text
         style={{
           fontSize: 25,
-          fontFamily: "itallic",
+          fontFamily: "italic", // Use a valid font family
         }}
       >
         No Trips planned yet!
@@ -27,12 +28,12 @@ export default function StartNewTripCard() {
       <Text
         style={{
           fontSize: 20,
-          fontFamily: "itallic",
+          fontFamily: "italic", // Use a valid font family
           textAlign: "center",
           color: "gray",
         }}
       >
-        Looks like its time to plan a new travel experience! Get Started below
+        Looks like it's time to plan a new travel experience! Get started below.
       </Text>
 
       <TouchableOpacity
@@ -47,8 +48,9 @@ export default function StartNewTripCard() {
         <Text
           style={{
             color: "white",
-            fontFamily: "SpaceMono-Regular",
-            fontSize: 15,fontFamily:'bold'
+            fontFamily: "SpaceMono-Regular", // Use a valid font family
+            fontSize: 15,
+            fontWeight: "bold", // Use fontWeight for bold text
           }}
         >
           Start A New Trip

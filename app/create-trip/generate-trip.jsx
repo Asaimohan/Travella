@@ -60,7 +60,7 @@ export default function generateTrip() {
                 fontSize: 15, textAlign: 'center'
             }}> We are working to generate your trip</Text>
             <Image
-                source={require('./../../assets/images/plane.gif')}
+                source={require('./../../assets/images/Plane.gif')}
                 style={{
                     height: 200,
                     width: '100%',
